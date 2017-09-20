@@ -1,0 +1,104 @@
+// Sidebar
+aside,
+.sidebar {
+  width: 255px;
+  min-height: 100vh;
+  background: $white;
+  border-right: 1px solid #e5e5e5;
+  float: left;
+  margin-left: -255px;
+  @include crossBrowser(transition, .2s ease-in);
+  .profile {
+    .image {
+      width: 75%;
+      margin: auto;
+      border-radius: 100%;
+      overflow: hidden;
+      margin-top: 25px;
+      box-shadow: 0 3px 20px rgba(0,0,0,0.15);
+      img {
+        width: 100%;
+      }
+    }
+    .name {
+      text-align: center;
+      font-family: $playfair;
+      font-style: italic;
+      font-weight: 900;
+      font-size: 35px;
+      margin-top: 10px;
+    }
+    .job {
+      text-align: center;
+      font-family: $playfair;
+      font-style: italic;
+      font-weight: 900;
+      font-size: 16px;
+      .colored {
+        color: $purple;
+        text-decoration: underline;
+      }
+    }
+    .subscribe {
+      margin: 20px auto 0;
+      text-align: center;
+      display: block;
+      text-transform: uppercase;
+      color: #fff;
+      background: $purple;
+      border-radius: 100px;
+      width: 70%;
+      padding: 12px 0;
+      &:hover {
+        background: $light-purple;
+      }
+    }
+    .followers {
+      text-align: center;
+      font-weight: 700;
+      margin-top: 20px;
+    }
+  }
+  .popular-tags {
+    .title {
+      font-size: 30px;
+      font-family: $playfair;
+      font-weight: 900;
+      font-style: italic;
+      line-height: 38px;
+      padding-left: 25px;
+      padding-right: 25px;
+      margin: 20px 0 25px;
+    }
+    .tags {
+      color: #939393;
+      width: 100%;
+      padding-left: 25px;
+      padding-right: 25px;
+      margin-bottom: 55px;
+      @include clearfix();
+      a {
+        color: #939393;
+        float: left;
+        margin-right: 3px;
+        &:hover {
+          color: $purple;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .copyright {
+    padding-left: 25px;
+    font-size: 13px;
+    color: #868686;
+    margin-bottom: 35px;
+    a {
+      color: #006cff;
+      &:hover {
+        color: #006cff;
+        text-decoration: underline;
+      }
+    }
+  }
+}

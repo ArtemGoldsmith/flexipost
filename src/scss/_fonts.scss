@@ -1,0 +1,14 @@
+//@mixin font-face($font-name, $file-name, $font-style: normal, $font-weight: normal) {
+//  @font-face {
+//    font-family: '#{$font-name}';
+//    src: url('../fonts/#{$file-name}');
+//
+//    font-style: $font-style;
+//    font-weight: $font-weight;
+//  }
+//}
+//@include font-face('Rubik Bold','Rubik-Bold.ttf', normal, 900)
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i');
+$lato: "Lato", sans-serif;
+$playfair: "Playfair Display", sans-serif;

@@ -1,0 +1,42 @@
+header
+	.top-bar
+		button#menu.menu-toggler
+			.bar
+			.bar
+			.bar
+		a.logotype(href='javascript:void(0)')
+			.logo
+				img(src='./images/logo-purple.svg', alt='logotype')
+			.text
+				span Flexi Post
+	ul.nav.navbar-nav
+		li
+			a(href='javascript:void(0)') Home
+		li
+			a(href='javascript:void(0)') Features
+		li.dropdown
+			a.dropdown-toggle(href='javascript:void(0)', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+				| Life
+				i.fa.fa-chevron-down
+			ul.dropdown-menu
+				li
+					a(href='javascript:void(0)') Life 1
+				li
+					a(href='javascript:void(0)') Life 2
+				li
+					a(href='javascript:void(0)') Life 3
+				li.divider(role='separator')
+				li
+					a(href='javascript:void(0)') Life 4
+				li.divider(role='separator')
+				li
+					a(href='javascript:void(0)') Life 5
+		li
+			a(href='javascript:void(0)') About Me
+		li
+			a(href='javascript:void(0)') Contact
+	form.navbar-form.navbar-right
+		.form-group
+			input.form-control(placeholder='Type Words Here')
+		button.btn.btn-default(type='submit')
+			i.fa.fa-search(aria-hidden='true')

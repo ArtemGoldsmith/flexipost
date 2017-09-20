@@ -1,0 +1,268 @@
+.modal-container {
+  display: none;
+}
+.modal-bg {
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,.7);
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  width: 30%;
+  max-width: 420px;
+  background: $white;
+  border-radius: 3px;
+  height: 480px;
+  margin: auto;
+  padding: 30px;
+  &.registration,
+  &.registration-two,
+  &.login {
+    height: 510px;
+    overflow: visible;
+    min-width: 390px;
+    .close {
+      position: absolute;
+      opacity: 1;
+      right: -100px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      width: 50px;
+      height: 35px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      @include background-image-retina('../images/icons/modal-back', 'png');
+      cursor: pointer;
+    }
+    label {
+      font-size: 16px;
+      font-weight: 400;
+      .required {
+        color: #ff6666;
+      }
+    }
+    input {
+      height: 50px;
+      border: 1px solid #cdcdcd;
+      border-radius: 3px;
+    }
+    .gender-block {
+      &.has-error {
+        label {
+          color: #ff6666;
+        }
+      }
+      input[type=radio] {
+        position: absolute;
+        visibility: hidden;
+        &:checked {
+          & ~ .check {
+            &:before {
+              //background: #000;
+              width: 15px;
+              height: 15px;
+            }
+          }
+        }
+      }
+      .male, 
+      .female {
+        width: 50%;
+        float: left;
+        position: relative;
+      }
+      label {
+        display: block;
+        position: relative;
+        padding-left: 40px;
+        margin: auto;
+        margin-top: 2px;
+        z-index: 9;
+        cursor: pointer;
+        @include crossBrowser(transition, .2s ease-in);
+      }
+      .check {
+        display: block;
+        position: absolute;
+        border: 2px solid #000;
+        border-radius: 100%;
+        height: 25px;
+        width: 25px;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        transition: border .25s linear;
+        -webkit-transition: border .25s linear;
+        &:before {
+          display: block;
+          background: $black;
+          position: absolute;
+          content: '';
+          border-radius: 100%;
+          height: 0;
+          width: 0;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto;
+          @include crossBrowser(transition, .2s ease-in);
+        }
+      }
+    }
+    .form-group {
+      position: relative;
+      .help-block {
+        position: absolute;
+        right: 10px;
+        top: 32px;
+        bottom: 0;
+        font-size: 12px;
+        margin: auto;
+        &.with-errors {
+          color: #ff6666;
+          .list-unstyled {
+            margin: 0;
+            li {
+              display: none;
+              &:first-child:last-child {
+                margin-top: 12px;
+                display: block;
+              }
+              &:first-child {
+                margin-top: 5px;
+                display: block;
+              }
+              &:last-child {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+    .buttons {
+      margin-bottom: 20px;
+      a {
+        display: block;
+        color: #282828;
+        text-align: center;
+        position: relative;
+        width: 85%;
+        margin: auto;
+        border: 2px solid #23599b;
+        border-radius: 50px;
+        padding: 10px 15px;
+        margin-bottom: 10px;
+        font-size: 16px;
+        text-transform: uppercase;
+        @include crossBrowser(transition, .2s ease-in);
+        &:hover {
+          color: #fff;
+          background: #23599b;
+          i {
+            color: #fff;
+          }
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+        i {
+          position: absolute;
+          color: #1884fe;
+          left: 20px;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          font-size: 20px;
+          line-height: 40px;
+          @include crossBrowser(transition, .2s ease-in);
+        }
+        &.facebook {
+          border-color: #23599b;
+          &:hover {
+            background: #23599b;
+            i {
+              color: #fff;
+            }
+          }
+          i {
+            color: #23599b;
+          }
+        }
+        &.google {
+          border-color: #10a8f5;
+          &:hover {
+            background: #10a8f5;
+            i {
+              color: #fff;
+            }
+          }
+          i {
+            color: #10a8f5;
+          }
+        }
+      }
+    }
+    .signin-button {
+      color: $white;
+      font-size: 14px;
+      border-radius: 50px;
+      padding: 12px 28px;
+      font-weight: 300;
+      text-transform: uppercase;
+      background: $purple;
+      border: 0;
+      width: 100%;
+      @include crossBrowser(transition, .2s ease-in);
+      &:hover,
+      &:focus,
+      &:active {
+        background: $light-purple;
+        outline: 0;
+      }
+    }
+    .signup-text {
+      text-align: center;
+      font-size: 16px;
+      a {
+        color: #ff4949;
+        &:hover,
+        &:focus,
+        &:active {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  &.registration {
+    height: 565px;
+    .success-message {
+      display: none;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      font-size: 20px;
+      height: 95px;
+      margin: auto;
+      text-align: center;
+      width: 65%;
+    }
+  }
+  &.registration-two {
+    height: 600px;
+  }
+}
